@@ -1,0 +1,300 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: none;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    background-color: #747CA4; /* Fondo llamativo */
+    color: white;
+    width: 100%;
+    padding: 15px 20px;
+    height: 150px; /* Aumentar la altura del header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+header img {
+    max-height: 200%; /* Permitir que la imagen ocupe más espacio */
+    max-width: 200%; /* Ajustar el ancho máximo proporcionalmente */
+    object-fit: contain; /* Mantener proporciones */
+    margin: 10px; /* Añadir un margen para separación */
+}
+
+
+
+/* main{
+    height: 100%;
+} */
+
+/* Main layout */
+#main-content {
+    display: flex;
+    flex: 1;
+    /* overflow: hidden; */
+}
+
+#category-bar {
+    width: 20%;
+    min-width: 200px;
+    background-color: #273672;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    
+    
+    
+}
+
+#category-list li {
+    list-style: none;
+    padding: 10px 15px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado entre elementos */
+    background-color: #747CA4; /* Fondo suave */
+    color: #ffffff; /* Texto oscuro para buen contraste */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: all 0.3s ease; /* Suaviza los cambios al interactuar */
+}
+
+#category-list li:hover {
+    background-color: #949CA4; /* Fondo más llamativo al pasar el mouse */
+    color: white; /* Texto blanco para contraste */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+
+#product-list {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+    
+}
+
+#product-list h2 {
+    border-bottom: 2px solid #273672;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    max-width: 100px;
+    margin-right: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-info h3 {
+    margin: 0 0 5px;
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+
+.product-info button {
+    width: 70%;
+}
+
+#order {
+    width: 25%;
+    min-width: 300px;
+    background-color: white;
+    border-left: 2px solid #273672;
+    padding: 20px;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Cart styles */
+#cart {
+    background-color: #273672;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    max-height: 50vh;
+    overflow-y: auto;
+    color: white;
+}
+
+.product-cart {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #747CA4;
+    border-radius: 8px;
+    border: 1px solid #0C0D11
+    ;
+}
+
+.product-cart img {
+    max-width: 50px;
+    margin-right: 15px;
+}
+
+.product-cart button {
+    margin-left: auto;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #273672;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#view-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 23%;
+    background-color: #273672;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    
+}
+
+#view-cart:hover {
+    background-color: #949CA4; /* Fondo más llamativo al pasar el mouse */
+    color: white; /* Texto blanco para contraste */
+}
+
+
+/* Estilos para el toast */
+.toast {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-size: 16px;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #main-content {
+        flex-direction: column;
+    }
+    
+    #category-bar {
+        width: 100%;
+        height: auto;
+    }
+    
+    #product-list {
+        width: 100%;
+        margin: 0;
+    }
+    
+    #order {
+        width: 100%;
+    }
+    
+    .product {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .product img {
+        max-width: 100%;
+    }
+    
+    .product-cart {
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+    #view-cart {
+        display: block; /* Visible en pantallas pequeñas */
+    }
+}
+
+
+@media (max-width: 768px) {
+    #category-bar {
+        position: fixed; /* Fijo en la parte superior */
+        top: 0;
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto; /* Altura automática para ajustarse a su contenido */
+        display: flex; /* Cambiar a diseño de fila */
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start; /* Alineación horizontal */
+        background-color: #273672; /* Mantener el color */
+        z-index: 1000; /* Para asegurarse de que esté por encima del contenido */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacarlo */
+        padding: 10px; /* Espaciado interno */
+        overflow-x: auto; /* Scroll horizontal si hay muchas categorías */
+    }
+
+    #category-list {
+        display: flex; /* Mostrar categorías en fila */
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 10px; /* Espaciado entre categorías */
+    }
+
+    #category-list li {
+        margin: 0; /* Eliminar margen */
+        padding: 10px 15px; /* Mantener el diseño */
+        flex-shrink: 0; /* Evitar que se reduzcan */
+    }
+
+    #main-content {
+        margin-top: 60px; /* Espacio igual a la altura de la barra fija */
+        flex-direction: column; /* Mantener diseño de columna para el contenido */
+    }
+
+    header{
+        margin-top: 60px;
+    }
+}
