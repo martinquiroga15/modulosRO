@@ -1,6 +1,6 @@
 const sheetID = '1VosGbf9GlNGo-NQgq2V6ykzqvgc0EsxYhpxb2Ca4pTg'; // El ID de tu hoja
 const apiKey = 'AIzaSyANGv1cWI7R6ZzoX84kamYuJO8RYgecZSk'
-const sheetURL = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/catalogoRepuestos?key=${apiKey}`;
+const sheetURL = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/MODULOS?key=${apiKey}`;
 
 
 
